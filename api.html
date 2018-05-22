@@ -1,0 +1,55 @@
+<html>
+   <head>
+      <meta charset="utf-8">
+      <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+      <script type="text/javascript">
+         google.load('visualization', '1', {
+            'packages':['motionchart']
+         });
+
+         google.setOnLoadCallback(drawChart);
+         var json = '[{"Campaign":"OMINT-AR-SRCH-BRAND-BMM-OMINTVos","Adgroup":"SRCH-BRAND-BMM-OMINT","Searchterm":"omint cartilla","Impressions":5617,"Clicks":797,"Suggested Match Type":"Exact","Amount of words":"2 word"},{"Campaign":"OMINT-AR-SRCH-BRAND-BMM-OMINTVos","Adgroup":"SRCH-BRAND-BMM-OMINT","Searchterm":"omint telefono","Impressions":4111,"Clicks":464,"Suggested Match Type":"Exact","Amount of words":"2 word"},{"Campaign":"OMINT-AR-SRCH-NBRAND-BMM-OMINTVos","Adgroup":"SRCH-NBRAND-BMM-OBRA SOCIAL","Searchterm":"obra social monotributo","Impressions":1888,"Clicks":59,"Suggested Match Type":"Exact","Amount of words":"3+ words"}';
+         var contador = json.length;
+         var res = json.split('"');
+         //alert(contador);
+
+         var Campaign = 'Campaign';
+         var Adgroup = 'Adgroup';
+         var Searchterm = 'Searchterm';
+         var Impressions = 'Impressions';
+         var Clicks = 'Clicks';
+         var Suggested_Match_Type = 'Suggested Match Type';
+         var Amount_of_words = 'Amount of words';
+
+
+         var conte = 0;
+
+
+         for (var i =0; i < contador; i++){
+            if (Campaign == res[i]){
+               alert(res[i+2]);
+              conte = conte +1;
+
+            }
+         }
+         //alert(conte);
+         function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses'],
+          ['2004',  1000,400],
+          ['2005',  1170,460],
+          ['2006',  660, 1120],
+          ['2007',  1030,540]
+        ]);
+            var chart=new google.visualization.PieChart(
+            document.getElementById('chart_div'));
+            chart.draw(data, {width: 600, height:300});
+         }
+      </script>
+   </head>
+<body>
+<div id="chart_div"
+   style="width:600px; height:300px;">
+</div>
+</body>
+</html>
