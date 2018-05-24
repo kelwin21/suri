@@ -75,11 +75,127 @@
     .bgimg {
         background-image: url('movilGoogle.png');
         background-repeat: no-repeat;
-        width:87%; padding:3%;
+        background-size: contain;
+        width:80%; padding:3%;.
+
     }
 
   </style>
-  <body>
+
+  <script type="text/javascript">
+var text = '{"json":[{"Campaign":"OMINT-AR-SRCH-BRAND-BMM-OMINTVos","Adgroup":"SRCH-BRAND-BMM-OMINT","Searchterm":"omint cartilla","Impressions":5617,"Clicks":797,"Suggested Match Type":"Exact","Amount of words":"2 word"},{"Campaign":"OMINT-AR-SRCH-BRAND-BMM-OMINTVos","Adgroup":"SRCH-BRAND-BMM-OMINT","Searchterm":"omint telefono","Impressions":4111,"Clicks":464,"Suggested Match Type":"Exact","Amount of words":"2 word"},{"Campaign":"OMINT-AR-SRCH-NBRAND-BMM-OMINTVos","Adgroup":"SRCH-NBRAND-BMM-OBRA SOCIAL","Searchterm":"obra social monotributo","Impressions":1888,"Clicks":59,"Suggested Match Type":"Exact","Amount of words":"3+ words"},{"Campaign":"OMINT-AR-SRCH-CONQUEST-BMM-OMINTVos","Adgroup":"SRCH-BRAND-BMM-MEDIFE","Searchterm":"medife planes","Impressions":1704,"Clicks":53,"Suggested Match Type":"Exact","Amount of words":"2 word"},{"Campaign":"OMINT-AR-SRCH-BRAND-BMM-OMINTVos","Adgroup":"SRCH-BRAND-BMM-OMINT","Searchterm":"cartilla omint","Impressions":1563,"Clicks":243,"Suggested Match Type":"Exact","Amount of words":"2 word"},{"Campaign":"OMINT-AR-SRCH-CONQUEST-BMM-OMINTVos","Adgroup":"SRCH-BRAND-BMM-SANCORD SALUD","Searchterm":"accord","Impressions":1490,"Clicks":17,"Suggested Match Type":"Exact","Amount of words":"1 word"},{"Campaign":"OMINT-AR-SRCH-BRAND-BMM-OMINTVos","Adgroup":"SRCH-BRAND-BMM-OMINT","Searchterm":"omint sucursales","Impressions":1490,"Clicks":118,"Suggested Match Type":"Exact","Amount of words":"2 word"}]}';
+
+var textoAreaDividido = text.split("Searchterm");
+var numeroPalabras = textoAreaDividido.length;
+var obj = JSON.parse(text); 
+var valor = "";
+var valor1 = "";
+var valor2 = "";
+var valor3 = "";
+var valor4 = "";
+var valor5 = "";
+
+    function onload(){
+    
+    
+      var i = 0;
+      if(i <  numeroPalabras-1){
+        valor = obj.json[i].Searchterm;
+      }else{
+        valor = "";
+      }
+      if(i+1 <  numeroPalabras-1){
+        valor1 = obj.json[i+1].Searchterm;
+      }else{
+        valor1 = "";
+      }
+      if(i+2 <  numeroPalabras-1){
+        valor2 = obj.json[i+2].Searchterm;
+      }else{
+        valor2 = "";
+      }
+      if(i+3 <  numeroPalabras-1){
+        valor3 = obj.json[i+3].Searchterm;
+      }else{
+        valor3 = "";
+      }
+      if(i+4 <  numeroPalabras-1){
+        valor4 = obj.json[i+4].Searchterm;
+      }else{
+        valor4 = "";
+      }
+      if(i+5 <  numeroPalabras-1){
+        valor5 = obj.json[i+5].Searchterm;
+      }else{
+        valor5 = "";
+      }
+
+
+      document.getElementById('inimg').value = valor;
+      document.getElementById('search1').value = valor1;
+      document.getElementById('search2').value = valor2;
+      document.getElementById('search3').value = valor3;
+      document.getElementById('search4').value = valor4;
+      document.getElementById('search5').value = valor5;
+
+
+}
+    function next(){
+
+    
+      var i = document.getElementById('inicio').value;
+      if (i == ''){
+
+        var i = numeroPalabras - numeroPalabras + 1;
+      }else{
+        i++;
+      }
+
+      document.getElementById('inicio').value = i;
+
+
+      if(i <  numeroPalabras-1){
+        valor = obj.json[i].Searchterm;
+      }else{
+        valor = "";
+      }
+      if(i+1 <  numeroPalabras-1){
+        valor1 = obj.json[i+1].Searchterm;
+      }else{
+        valor1 = "";
+      }
+      if(i+2 <  numeroPalabras-1){
+        valor2 = obj.json[i+2].Searchterm;
+      }else{
+        valor2 = "";
+      }
+      if(i+3 <  numeroPalabras-1){
+        valor3 = obj.json[i+3].Searchterm;
+      }else{
+        valor3 = "";
+      }
+      if(i+4 <  numeroPalabras-1){
+        valor4 = obj.json[i+4].Searchterm;
+      }else{
+        valor4 = "";
+      }
+      if(i+5 <  numeroPalabras-1){
+        valor5 = obj.json[i+5].Searchterm;
+      }else{
+        valor5 = "";
+      }
+
+
+      document.getElementById('inimg').value = valor;
+      document.getElementById('search1').value = valor1;
+      document.getElementById('search2').value = valor2;
+      document.getElementById('search3').value = valor3;
+      document.getElementById('search4').value = valor4;
+      document.getElementById('search5').value = valor5;
+
+}
+  </script>
+  <body onload="onload()">
   <div style="width:80%; float:left;">
   <h2>Keyword Discover</h2>
   
@@ -89,15 +205,15 @@
     </div>
   <br>
     <div style="width:25%; float:left;">
-
+  
       <div class="bgimg">
-      <br><br><br><br><br>
-      <input style="border-width:0; width:67%;" type="text" name="text">
+        <br><br><br><br><br>
+        <input style="border-width: 0; width:63%; left: 7%; position: relative;" type="text" name="inimg" id="inimg" value="" readonly="yes">
 
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      <img src="no.png" style="width:20%; padding:5%;" >
-      <img src="no_seguro.png" style="width:20%; padding:0%;" >
-      <img src="si.png" style="width:20%; padding:5%;" >    
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <img src="no.png" style="width:20%; padding:5%;" onclick="next();">
+        <img src="no_seguro.png" style="width:20%; padding:0%;" onclick="next();">
+        <img src="si.png" style="width:20%; padding:5%;" onclick="next();">    
       </div>
       
     
@@ -106,14 +222,17 @@
     </div>
 
     <div style="width:18%; padding:12%; float:left;">
-      <p><input type="text" id="search" style="width:70%;" value="franquicias" /><img src="search.png" style="width:7.5%;" ></p>  
-      <p><input type="text" id="search" style="width:70%;" value="franquicias1"/><img src="search.png" style="width:7.5%;" ></p>  
-      <p><input type="text" id="search" style="width:70%;" value="franquicias2"/><img src="search.png" style="width:7.5%;" ></p>  
-      <p><input type="text" id="search" style="width:70%;" value="franquicias3"/><img src="search.png" style="width:7.5%;" ></p>  
-      <p><input type="text" id="search" style="width:70%;" value="franquicias4" /><img src="search.png" style="width:7.5%;" ></p>  
+      <p><input type="text" id="search1" readonly="yes" style="width:70%;" /><img src="search.png" style="width:7.5%;"></p>  
+      <p><input type="text" id="search2" readonly="yes" style="width:70%;" /><img src="search.png" style="width:7.5%;" ></p>  
+      <p><input type="text" id="search3" readonly="yes" style="width:70%;" /><img src="search.png" style="width:7.5%;" ></p>  
+      <p><input type="text" id="search4" readonly="yes" style="width:70%;" /><img src="search.png" style="width:7.5%;" ></p>  
+      <p><input type="text" id="search5" readonly="yes" style="width:70%;" /><img src="search.png" style="width:7.5%;" ></p>  
 
       <input type="button" onclick="location.href='KwdAvanzado.html'" value="Ir al modo Avanzado" name="boton" style="width:80%; float:left;"/>
     
+<input type="hidden" id="inicio" name="inicio">
+<form
+
 
     </div>
   </body>
