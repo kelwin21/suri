@@ -74,14 +74,33 @@
     }
 
   </style>
+
+  <script type="text/javascript">
+var text = '{"json":[{"Campaign":"OMINT-AR-SRCH-BRAND-BMM-OMINTVos","Adgroup":"SRCH-BRAND-BMM-OMINT","Searchterm":"omint cartilla","Impressions":5617,"Clicks":797,"Suggested Match Type":"Exact","Amount of words":"2 word"},{"Campaign":"OMINT-AR-SRCH-BRAND-BMM-OMINTVos","Adgroup":"SRCH-BRAND-BMM-OMINT","Searchterm":"omint telefono","Impressions":4111,"Clicks":464,"Suggested Match Type":"Exact","Amount of words":"2 word"},{"Campaign":"OMINT-AR-SRCH-NBRAND-BMM-OMINTVos","Adgroup":"SRCH-NBRAND-BMM-OBRA SOCIAL","Searchterm":"obra social monotributo","Impressions":1888,"Clicks":59,"Suggested Match Type":"Exact","Amount of words":"3+ words"},{"Campaign":"OMINT-AR-SRCH-CONQUEST-BMM-OMINTVos","Adgroup":"SRCH-BRAND-BMM-MEDIFE","Searchterm":"medife planes","Impressions":1704,"Clicks":53,"Suggested Match Type":"Exact","Amount of words":"2 word"},{"Campaign":"OMINT-AR-SRCH-BRAND-BMM-OMINTVos","Adgroup":"SRCH-BRAND-BMM-OMINT","Searchterm":"cartilla omint","Impressions":1563,"Clicks":243,"Suggested Match Type":"Exact","Amount of words":"2 word"},{"Campaign":"OMINT-AR-SRCH-CONQUEST-BMM-OMINTVos","Adgroup":"SRCH-BRAND-BMM-SANCORD SALUD","Searchterm":"accord","Impressions":1490,"Clicks":17,"Suggested Match Type":"Exact","Amount of words":"1 word"},{"Campaign":"OMINT-AR-SRCH-BRAND-BMM-OMINTVos","Adgroup":"SRCH-BRAND-BMM-OMINT","Searchterm":"omint sucursales","Impressions":1490,"Clicks":118,"Suggested Match Type":"Exact","Amount of words":"2 word"}]}';
+
+var campaign = text.split("Campaign");
+var adgroup = text.split("Adgroup");
+var searchterm = text.split("Searchterm");
+var impressions = text.split("Impressions");
+var clicks = text.split("Clicks");
+var numeroPalabras = campaign.length;
+
+var obj = JSON.parse(text); 
+var valor = "";
+var valor1 = "";
+var valor2 = "";
+var valor3 = "";
+var valor4 = "";
+
+
+  </script>
   <body>
   <h2>Keyword Discover</h2>
     <div style="width:100%; padding:3px;">
       <div style="width:75%; float:left;">
-        <table border="1">
+        <table id="myTable" border="1">
           <thead>
             <td class="cabecera" colspan="5" align="right" >Últimos 90 días</td>
-
           </thead>
           <thead>
             <td class="cabecera">Campaña</td>
@@ -96,97 +115,68 @@
             <td></td>
             <td class="cabecera1" align="center">Tipo de concordancia</td>
           </thead>
-          <tr>
-            <td class="contenido">OMINT-AR-SRCH-BRAND-BMM-OMINTVos</td>
-            <td class="contenido">SRCH-BRAND-BMM-OMINT</td>
-            <td class="contenido">omint cartilla</td>
-            <td class="contenido">5617</td>
-            <td class="contenido">797</td>
-            <td></td>
-            <td>
-              <input type="radio" name="word_clave1" value="agregar" checked=""> Agregar 
-              <input type="radio" name="word_clave1" value="excluir"> Excluir 
-              <input type="radio" name="word_clave1" value="omitir"> Omitir 
-            </td>
-            <td></td>
-            <td>
-              <select>
-                <option value="8">8,00 ARS</option>
-                <option value="6">6,00 ARS</option>
-                <option value="4">4,00 ARS</option>
-              </select>
-            </td>
-            <td></td>
-            <td>
-              <select>
-                <option value="E">Exacta</option>
-                <option value="F">Frase</option>
-                <option value="A">Amplia</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td class="contenido">OMINT-AR-SRCH-BRAND-BMM-OMINTVos</td>
-            <td class="contenido">SRCH-BRAND-BMM-OMINT</td>
-            <td class="contenido">omint cartilla</td>
-            <td class="contenido">4111</td>
-            <td class="contenido">464</td>
-            <td></td>
-            <td>
-              <input type="radio" name="word_clave2" value="agregar" checked=""> Agregar 
-              <input type="radio" name="word_clave2" value="excluir"> Excluir 
-              <input type="radio" name="word_clave2" value="omitir"> Omitir 
-            </td>
-            <td></td>
-            <td>
-              <select>
-                <option value="8">8,00 ARS</option>
-                <option value="6">6,00 ARS</option>
-                <option value="4">4,00 ARS</option>
-              </select>
-            </td>
-            <td></td>
-            <td>
-              <select>
-                <option value="E">Exacta</option>
-                <option value="F">Frase</option>
-                <option value="A">Amplia</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td class="contenido">OMINT-AR-SRCH-NBRAND-BMM-OMINTVos</td>
-            <td class="contenido">SRCH-NBRAND-BMM-OBRA SOCIAL</td>
-            <td class="contenido">obra social monotributo</td>
-            <td class="contenido">1888</td>
-            <td class="contenido">59</td>
-            <td></td>
-            <td>
-              <input type="radio" name="word_clave3" value="agregar" checked=""> Agregar 
-              <input type="radio" name="word_clave3" value="excluir"> Excluir 
-              <input type="radio" name="word_clave3" value="omitir"> Omitir 
-            </td>
-            <td></td>
-            <td>
-              <select>
-                <option value="8">8,00 ARS</option>
-                <option value="6">6,00 ARS</option>
-                <option value="4">4,00 ARS</option>
-              </select>
-            </td>
-            <td></td>
-            <td>
-              <select>
-                <option value="E">Exacta</option>
-                <option value="F">Frase</option>
-                <option value="A">Amplia</option>
-              </select>
-            </td>
-          </tr>
+          <tbody id="bodyTable" >
+                  <script type="text/javascript">  
+                  function table()
+                  {
+                     this.calcmul = calc;
+                  }
+                   function calc(arg1,arg2)
+                   {
+                        var multi = (arg1 * arg2);
+                        return multi;  
+                   }
+                  var table2 = new table();  
+                  
+
+                  for(var i =0; i<=numeroPalabras-2; i++)
+                  {
+
+                  var agPalCla = '<input type="radio" name="word_clave_'+i+'" value="agregar" checked=""> Agregar '+
+                                '<input type="radio" name="word_clave_'+i+'" value="excluir"> Excluir '+
+                                '<input type="radio" name="word_clave_'+i+'" value="omitir"> Omitir ';
+
+                  var cpcSug = '<select id="cpcSug_'+i+'">'+
+                                  '<option value="8">8,00 ARS</option>'+
+                                  '<option value="6">6,00 ARS</option>'+
+                                  '<option value="4">4,00 ARS</option>'+
+                                '</select>';
+
+
+                  var tipCon = '<select id="tipCon_'+i+'">'+
+                                  '<option value="E">Exacta</option>'+
+                                  '<option value="F">Frase</option>'+
+                                  '<option value="A">Amplia</option>'+
+                                '</select>';
+                    valor = obj.json[i].Campaign;
+                    valor1 = obj.json[i].Adgroup;
+                    valor2 = obj.json[i].Searchterm;
+                    valor3 = obj.json[i].Impressions;
+                    valor4 = obj.json[i].Clicks;
+                     document.write("<tr>");
+                     for(var k=1; k<=1; k++)
+                        {
+                           var arg1 = i;
+                           var arg2 = k; 
+                           document.write("<td id='campaign_"+i+"' class='contenido'>"+valor+"</td>");   
+                           document.write("<td id='grupo_"+i+"' class='contenido'>"+valor1+"</td>"); 
+                           document.write("<td id='searchterm_"+i+"' class='contenido'>"+valor2+"</td>"); 
+                           document.write("<td id='impressions_"+i+"' class='contenido'>"+valor3+"</td>"); 
+                           document.write("<td id='clicks_"+i+"' class='contenido'>"+valor4+"</td>"); 
+                           document.write("<td class='contenido'></td>"); 
+                           document.write("<td class='contenido'>"+agPalCla+"</td>"); 
+                           document.write("<td class='contenido'></td>"); 
+                           document.write("<td class='contenido'>"+cpcSug+"</td>"); 
+                           document.write("<td class='contenido'></td>"); 
+                           document.write("<td class='contenido'>"+tipCon+"</td>"); 
+                        }
+                     document.write("</tr>"); 
+                  }  
+                  </script>
+          </tbody>
         </table>
 <input type="button" onclick="location.href='KwdBasico.html'" value="Ir al modo Básico" name="boton" style="width:20%; float:right;" />
       </div>
-
     </div>
   </body>
 </html>
